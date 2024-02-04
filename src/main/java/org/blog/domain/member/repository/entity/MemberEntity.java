@@ -16,7 +16,7 @@ import org.blog.base.entity.BaseInsertEntity;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Member extends BaseInsertEntity {
+public class MemberEntity extends BaseInsertEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

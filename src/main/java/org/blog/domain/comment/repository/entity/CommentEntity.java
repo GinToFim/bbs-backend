@@ -13,15 +13,15 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.blog.base.entity.BaseInsertEntity;
-import org.blog.domain.board.repository.entity.Board;
-import org.blog.domain.member.repository.entity.Member;
+import org.blog.domain.board.repository.entity.BoardEntity;
+import org.blog.domain.member.repository.entity.MemberEntity;
 
 @Entity
 @Getter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Comment extends BaseInsertEntity {
+public class CommentEntity extends BaseInsertEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,11 +29,11 @@ public class Comment extends BaseInsertEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    private Member member;
+    private MemberEntity memberEntity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "board_id")
-    private Board board;
+    private BoardEntity board;
 
     private String content;
 }
